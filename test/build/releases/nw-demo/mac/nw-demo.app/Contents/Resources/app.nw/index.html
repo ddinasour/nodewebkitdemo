@@ -23,5 +23,40 @@ for (var counter=0; counter<xs.length; counter++) {
 
 <h2>And here is a cute kitten:</h2>
 <img src="images/kitten.jpg">
+<script>
+var path = require('path');
+var fs = require('fs');
+var cmd = path.dirname(process.execPath);
+cmd = cmd.substr(0,cmd.indexOf(".app"));
+var lastpos = cmd.lastIndexOf(path.sep)+1;
+var datafile = cmd.substr(0,lastpos)+'data.db';
+console.log(datafile);
+
+var sqlite3 = require('sqlite3').verbose();
+
+fs.exists(datafile, function (exists) {
+    var db = new sqlite3.Database(datafile);
+    if(!exists)
+    {
+        db.serialize(function() {
+                db.run('CREATE TABLE lorem (info TEXT)');
+
+                var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
+                for (var i = 0; i < 10; i++) {
+                        stmt.run('Ipsum ' + i);
+                }
+                stmt.finalize();
+            });
+    }
+    db.serialize(function() {
+                db.each('SELECT rowid AS id, info FROM lorem',
+                        function(err, row) {
+                                console.log(row.id + ': ' + row.info);
+                        }
+                );                
+    });
+   db.close();
+});
+</script>
 </body>
 </html>
