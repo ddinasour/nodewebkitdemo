@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/metro-bootstrap.css" rel="stylesheet">
+<link href="css/metro-bootstrap-responsive.css" rel="stylesheet">
+<script>
+var sqlite3 = require('sqlite3').verbose();
+        var db = new sqlite3.Database('data/db');
+
+        db.serialize(function() {
+                /*db.run('CREATE TABLE lorem (info TEXT)');
+
+                var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
+                for (var i = 0; i < 10; i++) {
+                        stmt.run('Ipsum ' + i);
+                }
+                stmt.finalize();
+                */
+                
+
+                db.each('SELECT rowid AS id, info FROM lorem',
+                        function(err, row) {
+                                console.log(row.id + ': ' + row.info);
+                        }
+                );                
+        });
+        db.close();
+  </script>
+</head>
+<body class="metro">
+	<br>
+    <div class="container">
+                    <div class="tile half bg-darkRed">
+                        <div class="tile-content icon">
+                            <i class="icon-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="tile bg-green">
+                        <div class="tile-content icon">
+                            <img src="images/excel2013icon.png">
+                        </div>
+                    </div>
+    </div>
+
+    <br>
+    <a href="index.html" >点我</a>
+
+</body>
+</html>

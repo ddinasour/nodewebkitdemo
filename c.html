@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/metro-bootstrap.css" rel="stylesheet">
+<link href="css/metro-bootstrap-responsive.css" rel="stylesheet">
+<script src="js/jquery/jquery.min.js"></script>
+<script>
+	localStorage.naxieshirid = "";
+	$( window ).load(function(){
+		$("#setcookie").click(function(){
+			var http = require("http");
+			http.get("http://www.naxieshir.com/testb.php", function(res) {
+				  console.log("Got response: " + res.statusCode);
+				  res.on('data', function (chunk) {
+				      console.log('BODY: ' + chunk);
+				  });
+				cookies = res.headers['set-cookie'][0].split(';')[0]//保存set-cookie的值
+				localStorage.naxieshirid = cookies;
+				console.log('Cookies: ' + cookies);
+			  }).on('error', function(e) {
+			    console.log("Got error: " + e.message);
+			});
+
+		});
+
+        $("#getSession").click(function(){
+            var http = require("http");
+            var content = "";
+            var options = {
+                hostname: 'www.naxieshir.com',
+                port: 80,
+                path: '/test.php',
+                method: 'GET',
+                headers:{//按照正常登陆时请求header的信息来设置，可以不设置这么多
+                'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                //'Accept-Encoding':'gzip,deflate,sdch',
+                'Accept-Language':'zh-CN,zh;q=0.8',
+                'Cache-Control':'max-age=0',
+                'Connection':'keep-alive',
+                'Content-Length':content.length,//正文长度
+                'Content-Type':'application/x-www-form-urlencoded',
+                'Cookie':localStorage.naxieshirid,//携带请求验证码时的cookie
+                'Host':'www.naxieshir.com',
+                'Origin':'http://www.naxieshir.com',
+                'Referer':'http://www.naxieshir.com'
+                }
+            }
+            var req = http.request(options,function(res){
+                //console.log(res);
+                res.on('data',function(data){
+                alert(data);
+                   });
+                });
+            req.write(content)//在这里写入请求正文
+            req.end()//必须要有请求结束，不然会报错
+
+        });
+	});
+
+</script>
+
+</head>
+<body class="metro">
+	<br>
+<div class="container">
+    <div class="tile half bg-darkRed">
+	<div class="tile-content icon">
+	    <i class="icon-rocket"></i>
+	</div>
+    </div>
+    <div class="tile bg-green">
+	<div class="tile-content icon">
+	    <img src="images/excel2013icon.png">
+	</div>
+    </div>
+</div>
+
+    <a href="#" id="setcookie" >set</a>
+    <a href="#" id="getSession" >get</a>
+    <br>
+    <a href="index.html" >点我</a>
+    <br>
+
+</body>
+</html>

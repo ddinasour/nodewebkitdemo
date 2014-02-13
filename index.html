@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/metro-bootstrap.css" rel="stylesheet">
+<link href="css/metro-bootstrap-responsive.css" rel="stylesheet">
+<script src="js/jquery/jquery.min.js"></script>
+</head>
+<script>
+	$( window ).load(function() {
+		  // Run code
+		  //aa = $("#testrsync").html();
+
+		  $("#testrsync").click(function(){
+			var sqlite3 = require('sqlite3').verbose();
+        		var db = new sqlite3.Database('/tmp/db');
+			var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
+			for (var i = 0; i < 2; i++) {
+				stmt.run('Ipsum ' + i);
+			}
+			stmt.finalize();
+			db.close();
+			  //alert("hhh");
+			  //$.ajax({
+			  //          url: "c.html",
+			  //            data: {
+			  //      	       zipcode: 97201
+			  //      	},
+			  //      	success: function( data ) {
+			  //      	//$( "#weather-temp" ).html( "<strong>" + data + "</strong> degrees" );
+			  //      	alert(data);
+			  //      	}
+			  //});
+
+		  });
+
+
+	  });
+</script>
+<body class="metro">
+	<br>
+    <div class="container">
+                    <div class="tile half bg-darkRed">
+                        <div class="tile-content icon">
+                            <i class="icon-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="tile bg-green">
+                        <div class="tile-content icon">
+                            <img src="images/excel2013icon.png">
+                        </div>
+                    </div>
+                    <div class="tile double">
+                        <div class="tile-content image">
+                            <img src="images/1.jpg">
+                        </div>
+                    </div>
+                    <div class="tile double">
+                        <div class="tile-content image-set">
+                            <img src="images/1.jpg">
+                            <img src="images/2.jpg">
+                            <img src="images/3.jpg">
+                            <img src="images/4.jpg">
+                            <img src="images/5.jpg">
+                        </div>
+                    </div>
+    </div>
+
+    <br>
+    <a href="b.html" >sqlite</a><br>
+    <a href="c.html" >cookie</a><br>
+    <a href="d.html" >iframe</a><br>
+    <a href="#" id="testrsync" >异步请求</a>
+
+</body>
+</html>
