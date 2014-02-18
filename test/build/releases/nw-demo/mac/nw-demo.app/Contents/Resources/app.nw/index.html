@@ -27,9 +27,15 @@ for (var counter=0; counter<xs.length; counter++) {
 var path = require('path');
 var fs = require('fs');
 var cmd = path.dirname(process.execPath);
-cmd = cmd.substr(0,cmd.indexOf(".app"));
-var lastpos = cmd.lastIndexOf(path.sep)+1;
-var datafile = cmd.substr(0,lastpos)+'data.db';
+if(cmd.indexOf(".app") > 0)
+{
+    cmd = cmd.substr(0,cmd.indexOf(".app"));
+    var lastpos = cmd.lastIndexOf(path.sep)+1;
+    var datafile = cmd.substr(0,lastpos)+'data.db';
+}else
+{
+    var datafile = cmd+path.sep+'data.db';
+}
 console.log(datafile);
 
 var sqlite3 = require('sqlite3').verbose();
