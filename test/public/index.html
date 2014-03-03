@@ -1,68 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hello World from grunt-node-webkit-builder!</title>
-<script>
-    var deck = require('deck');
-    var xs = deck.shuffle([ 1, 2, 3, 4 ]);
-    console.log(deck, xs);
-</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="static/css/metro-bootstrap.css" rel="stylesheet">
+<link href="static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+<script src="static/js/jquery/jquery.min.js"></script>
 </head>
-<body>
-<h1>Hello World!</h1>
-We are using node.js <script>document.write(process.version)</script>
-
-<h2>Here is a required node_module</h2>
-<ul>
 <script>
-for (var counter=0; counter<xs.length; counter++) {
-   document.write("<li>" + xs[counter] + "</li>");
-}
 </script>
-</ul>
+<body class="metro">
+	<br>
+    <div class="container">
+                    <div class="tile half bg-darkRed">
+                        <div class="tile-content icon">
+                            <i class="icon-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="tile bg-green">
+                        <div class="tile-content icon">
+                            <img src="static/images/excel2013icon.png">
+                        </div>
+                    </div>
+                    <div class="tile double">
+                        <div class="tile-content image">
+                            <img src="static/images/1.jpg">
+                        </div>
+                    </div>
+                    <div class="tile double">
+                        <div class="tile-content image-set">
+                            <img src="static/images/1.jpg">
+                            <img src="static/images/2.jpg">
+                            <img src="static/images/3.jpg">
+                            <img src="static/images/4.jpg">
+                            <img src="static/images/5.jpg">
+                        </div>
+                    </div>
 
-<h2>And here is a cute kitten:</h2>
-<img src="images/kitten.jpg">
-<script>
-var path = require('path');
-var fs = require('fs');
-var cmd = path.dirname(process.execPath);
-if(cmd.indexOf(".app") > 0)
-{
-    cmd = cmd.substr(0,cmd.indexOf(".app"));
-    var lastpos = cmd.lastIndexOf(path.sep)+1;
-    var datafile = cmd.substr(0,lastpos)+'data.db';
-}else
-{
-    var datafile = cmd+path.sep+'data.db';
-}
-console.log(datafile);
+    <br>
+    <a href="demo/sqlite.html" >sqlite</a><br>
+    <a href="demo/cookie.html" >cookie</a><br>
+    <a href="demo/iframe.html" >iframe</a><br>
+    <a href="demo/init_database.html" >init database</a><br>
+    <a href="demo/crud.html" >data crud</a><br>
+    <a href="demo/router.html" >router</a><br>
+    </div>
 
-var sqlite3 = require('sqlite3').verbose();
-
-fs.exists(datafile, function (exists) {
-    var db = new sqlite3.Database(datafile);
-    if(!exists)
-    {
-        db.serialize(function() {
-                db.run('CREATE TABLE lorem (info TEXT)');
-
-                var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
-                for (var i = 0; i < 10; i++) {
-                        stmt.run('Ipsum ' + i);
-                }
-                stmt.finalize();
-            });
-    }
-    db.serialize(function() {
-                db.each('SELECT rowid AS id, info FROM lorem',
-                        function(err, row) {
-                                console.log(row.id + ': ' + row.info);
-                        }
-                );                
-    });
-   db.close();
-});
-</script>
 </body>
 </html>

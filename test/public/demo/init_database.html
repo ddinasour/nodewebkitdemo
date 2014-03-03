@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../static/css/metro-bootstrap.css" rel="stylesheet">
+<link href="../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+<script src="../static/js/jquery/jquery.min.js"></script>
+<title>Hello World from grunt-node-webkit-builder!</title>
+<script>
+    //var deck = require('deck');
+    //var xs = deck.shuffle([ 1, 2, 3, 4 ]);
+    //console.log(deck, xs);
+</script>
+</head>
+<body class="metro">
+<a href="../index.html">返回</a>
+<script>
+var path = require('path');
+var fs = require('fs');
+var cmd = path.dirname(process.execPath);
+if(cmd.indexOf(".app") > 0)
+{
+    cmd = cmd.substr(0,cmd.indexOf(".app"));
+    var lastpos = cmd.lastIndexOf(path.sep)+1;
+    var datafile = cmd.substr(0,lastpos)+'data.db';
+}else
+{
+    var datafile = cmd+path.sep+'data.db';
+}
+console.log(datafile);
+
+
+$( window ).load(function() {
+    var orm = require("orm");
+
+    orm.connect("sqlite://"+datafile, function (err, db) {
+      if (err) throw err;
+
+        var Person = db.define("person", {
+            name      : String,
+            surname   : String,
+            age       : Number
+        }, {
+            methods: {
+                fullName: function () {
+                    return this.name + ' ' + this.surname;
+                }
+            },
+            validations: {
+                age: orm.enforce.ranges.number(18, undefined, "under-age")
+            }
+        });
+
+        Person.sync();
+
+        var newRecord = {};
+        newRecord.name = "huangcw";
+        newRecord.surname = "huang";
+        newRecord.age = 18;
+        Person.create(newRecord, function(err, results) {
+            console.log(results); 
+         });
+    });
+
+});
+</script>
+</div>
+</body>
+</html>

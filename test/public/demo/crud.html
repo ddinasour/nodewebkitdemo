@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../static/css/metro-bootstrap.css" rel="stylesheet">
+<link href="../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+<script src="../static/js/jquery/jquery.min.js"></script>
+<title>Hello World from grunt-node-webkit-builder!</title>
+<script>
+    //var deck = require('deck');
+    //var xs = deck.shuffle([ 1, 2, 3, 4 ]);
+    //console.log(deck, xs);
+</script>
+</head>
+<body class="metro">
+<a href="../index.html">返回</a>
+<script>
+var path = require('path');
+var fs = require('fs');
+var cmd = path.dirname(process.execPath);
+if(cmd.indexOf(".app") > 0)
+{
+    cmd = cmd.substr(0,cmd.indexOf(".app"));
+    var lastpos = cmd.lastIndexOf(path.sep)+1;
+    var datafile = cmd.substr(0,lastpos)+'data.db';
+}else
+{
+    var datafile = cmd+path.sep+'data.db';
+}
+//console.log(datafile);
+
+
+$( window ).load(function() {
+    var orm = require("orm");
+
+    orm.connect("sqlite://"+datafile, function (err, db) {
+      if (err) throw err;
+
+        var Person = db.define("person", {
+            name      : String,
+            surname   : String,
+            age       : Number
+        }, {
+            methods: {
+                fullName: function () {
+                    return this.name + ' ' + this.surname;
+                }
+            },
+            validations: {
+                age: orm.enforce.ranges.number(18, undefined, "under-age")
+            }
+        });
+
+        Person.find({ surname: "huang" }, function (err, people) {
+            // SQL: "SELECT * FROM person WHERE surname = 'Doe'"
+
+            console.log("People found: %d", people.length);
+            console.log("First person: %s, age %d", people[0].fullName(), people[0].age);
+
+            people[0].age = 16;
+            people[0].save(function (err) {
+                // err.msg = "under-age";
+            });
+        });
+    });
+
+
+    $("#testpost").click(function(){
+        
+    });
+
+});
+</script>
+<div class="">
+    <form>
+        <fieldset>
+            <legend>Legend</legend>
+            <label>Label name</label>
+            <div class="input-control text" data-role="input-control">
+                <input type="text" placeholder="type text" id="testposttext">
+                <button class="btn-clear" tabindex="-1" type="button"></button>
+            </div>
+
+            <input type="button" value="Submit" id="testpost">
+            <input type="button" value="createPerson" id="createPerson">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

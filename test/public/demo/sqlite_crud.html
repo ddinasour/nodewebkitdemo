@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../static/css/metro-bootstrap.css" rel="stylesheet">
+<link href="../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+<script src="../static/js/jquery/jquery.min.js"></script>
+<title>Hello World from grunt-node-webkit-builder!</title>
+<script>
+    //var deck = require('deck');
+    //var xs = deck.shuffle([ 1, 2, 3, 4 ]);
+    //console.log(deck, xs);
+</script>
+</head>
+<body class="metro">
+<a href="../index.html">返回</a>
+<script>
+var path = require('path');
+var fs = require('fs');
+var cmd = path.dirname(process.execPath);
+if(cmd.indexOf(".app") > 0)
+{
+    cmd = cmd.substr(0,cmd.indexOf(".app"));
+    var lastpos = cmd.lastIndexOf(path.sep)+1;
+    var datafile = cmd.substr(0,lastpos)+'data.db';
+}else
+{
+    var datafile = cmd+path.sep+'data.db';
+}
+console.log(datafile);
+
+
+$( window ).load(function() {
+    $("#testpost").click(function(){
+        
+        console.log("hhhhhh");
+        var sqlite3 = require('sqlite3').verbose();
+
+        fs.exists(datafile, function (exists) {
+            var db = new sqlite3.Database(datafile);
+            if(!exists)
+            {
+                db.serialize(function() {
+                        db.run('CREATE TABLE lorem (info TEXT)');
+
+                        var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
+                        for (var i = 0; i < 10; i++) {
+                                stmt.run('Ipsum ' + i);
+                        }
+                        stmt.finalize();
+                    });
+            }
+            db.serialize(function() {
+                        var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
+                        stmt.run($("#testposttext").val());
+                        stmt.finalize();
+
+                    db.each('SELECT rowid AS id, info FROM lorem',
+                            function(err, row) {
+                                    console.log(row.id + ': ' + row.info);
+                            }
+                    );                
+            });
+           db.close();
+
+
+        });
+    });
+
+      $("#testrsync").click(function(){
+        var sqlite3 = require('sqlite3').verbose();
+            var db = new sqlite3.Database('/tmp/db');
+        var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
+        for (var i = 0; i < 2; i++) {
+            stmt.run('Ipsum ' + i);
+        }
+        stmt.finalize();
+        db.close();
+          //alert("hhh");
+          //$.ajax({
+          //          url: "c.html",
+          //            data: {
+          //      	       zipcode: 97201
+          //      	},
+          //      	success: function( data ) {
+          //      	//$( "#weather-temp" ).html( "<strong>" + data + "</strong> degrees" );
+          //      	alert(data);
+          //      	}
+          //});
+
+      });
+
+  });
+</script>
+<div class="">
+    <form>
+        <fieldset>
+            <legend>Legend</legend>
+            <label>Label name</label>
+            <div class="input-control text" data-role="input-control">
+                <input type="text" placeholder="type text" id="testposttext">
+                <button class="btn-clear" tabindex="-1" type="button"></button>
+            </div>
+
+            <input type="button" value="Submit" id="testpost">
+            <input type="button" value="createPerson" id="createPerson">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
