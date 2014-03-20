@@ -1424,10 +1424,10 @@ a {
   width: 6.382978% !important;
 }
 .metro .grid.fluid .row .span2 {
-  width: 14.893614999999999% !important;
+  width: 14.893615% !important;
 }
 .metro .grid.fluid .row .span3 {
-  width: 23.404251999999996% !important;
+  width: 23.404252% !important;
 }
 .metro .grid.fluid .row .span4 {
   width: 31.914889% !important;
@@ -1436,10 +1436,10 @@ a {
   width: 40.425526% !important;
 }
 .metro .grid.fluid .row .span6 {
-  width: 48.93616299999999% !important;
+  width: 48.936163% !important;
 }
 .metro .grid.fluid .row .span7 {
-  width: 57.446799999999996% !important;
+  width: 57.4468% !important;
 }
 .metro .grid.fluid .row .span8 {
   width: 65.957437% !important;
@@ -1451,10 +1451,10 @@ a {
   width: 82.978711% !important;
 }
 .metro .grid.fluid .row .span11 {
-  width: 91.48934799999999% !important;
+  width: 91.489348% !important;
 }
 .metro .grid.fluid .row .span12 {
-  width: 99.99998499999998% !important;
+  width: 99.999985% !important;
 }
 .metro .grid.fluid .row [class*="span"] {
   margin-left: 2.127659%;
@@ -1475,10 +1475,10 @@ a {
   margin-left: 19.148933% !important;
 }
 .metro .grid.fluid .row .offset3 {
-  margin-left: 25.531910999999997% !important;
+  margin-left: 25.531911% !important;
 }
 .metro .grid.fluid .row .offset3:not(:first-child) {
-  margin-left: 27.659569999999995% !important;
+  margin-left: 27.65957% !important;
 }
 .metro .grid.fluid .row .offset4 {
   margin-left: 34.042548% !important;
@@ -1493,10 +1493,10 @@ a {
   margin-left: 44.680844% !important;
 }
 .metro .grid.fluid .row .offset6 {
-  margin-left: 51.063821999999995% !important;
+  margin-left: 51.063822% !important;
 }
 .metro .grid.fluid .row .offset6:not(:first-child) {
-  margin-left: 53.191480999999996% !important;
+  margin-left: 53.191481% !important;
 }
 .metro .grid.fluid .row .offset7 {
   margin-left: 59.574459% !important;
@@ -1514,13 +1514,13 @@ a {
   margin-left: 76.595733% !important;
 }
 .metro .grid.fluid .row .offset9:not(:first-child) {
-  margin-left: 78.72339199999999% !important;
+  margin-left: 78.723392% !important;
 }
 .metro .grid.fluid .row .offset10 {
   margin-left: 85.10637% !important;
 }
 .metro .grid.fluid .row .offset10:not(:first-child) {
-  margin-left: 87.23402899999999% !important;
+  margin-left: 87.234029% !important;
 }
 .metro .grid.fluid .row .offset11 {
   margin-left: 93.617007% !important;
@@ -1529,10 +1529,10 @@ a {
   margin-left: 95.744666% !important;
 }
 .metro .grid.fluid .row .offset12 {
-  margin-left: 102.12764399999999% !important;
+  margin-left: 102.127644% !important;
 }
 .metro .grid.fluid .row .offset12:not(:first-child) {
-  margin-left: 104.25530299999998% !important;
+  margin-left: 104.255303% !important;
 }
 .metro table {
   max-width: 100%;
@@ -1561,11 +1561,19 @@ a {
 .metro .table thead th {
   vertical-align: bottom;
 }
+.metro .table thead th,
+.metro .table thead td {
+  border-bottom: 1px solid #111111;
+}
 .metro .table tbody tr:last-child td {
   border-bottom: 0;
 }
 .metro .table tbody + tbody {
   border-top: 2px solid #eaeaea;
+}
+.metro .table tfoot th,
+.metro .table tfoot td {
+  border-top: 1px solid #111111;
 }
 .metro .table .table {
   background-color: #bfbfbf;
@@ -1573,6 +1581,18 @@ a {
 .metro .table.condensed th,
 .metro .table.condensed td {
   padding: 4px 5px;
+}
+.metro .table.condensed th .input-control,
+.metro .table.condensed td .input-control {
+  margin: 0;
+}
+.metro .table.super-condensed th,
+.metro .table.super-condensed td {
+  padding: 2px;
+}
+.metro .table.super-condensed th .input-control,
+.metro .table.super-condensed td .input-control {
+  margin: 0;
 }
 .metro .table.striped tbody tr:nth-child(odd) {
   background: #eeeeee;
@@ -2592,7 +2612,6 @@ a {
   margin: 0 5px;
 }
 .metro .input-control.switch .check {
-  background-color: transparent;
   position: relative;
   width: 45px;
   height: 18px;
@@ -2640,34 +2659,45 @@ a {
 }
 .metro .input-control.text,
 .metro .input-control.password,
-.metro .input-control.file {
+.metro .input-control.file,
+.metro .input-control.email,
+.metro .input-control.tel {
   display: inline-block;
   cursor: pointer;
+  position: relative;
   background-color: #fff;
   outline: 0;
   height: 34px;
-  position: relative;
   width: 100%;
 }
 .metro .input-control.text .btn-clear,
 .metro .input-control.password .btn-clear,
 .metro .input-control.file .btn-clear,
+.metro .input-control.email .btn-clear,
+.metro .input-control.tel .btn-clear,
 .metro .input-control.text .btn-reveal,
 .metro .input-control.password .btn-reveal,
 .metro .input-control.file .btn-reveal,
+.metro .input-control.email .btn-reveal,
+.metro .input-control.tel .btn-reveal,
 .metro .input-control.text .btn-date,
 .metro .input-control.password .btn-date,
 .metro .input-control.file .btn-date,
+.metro .input-control.email .btn-date,
+.metro .input-control.tel .btn-date,
 .metro .input-control.text .btn-file,
 .metro .input-control.password .btn-file,
 .metro .input-control.file .btn-file,
+.metro .input-control.email .btn-file,
+.metro .input-control.tel .btn-file,
 .metro .input-control.text .btn-search,
 .metro .input-control.password .btn-search,
-.metro .input-control.file .btn-search {
+.metro .input-control.file .btn-search,
+.metro .input-control.email .btn-search,
+.metro .input-control.tel .btn-search {
   background-color: #F0F0F0;
   position: absolute;
   top: 5px;
-  right: 5px;
   z-index: 2;
   border: 0;
   right: 4px;
@@ -2682,178 +2712,263 @@ a {
 .metro .input-control.text .btn-clear:after,
 .metro .input-control.password .btn-clear:after,
 .metro .input-control.file .btn-clear:after,
+.metro .input-control.email .btn-clear:after,
+.metro .input-control.tel .btn-clear:after,
 .metro .input-control.text .btn-reveal:after,
 .metro .input-control.password .btn-reveal:after,
 .metro .input-control.file .btn-reveal:after,
+.metro .input-control.email .btn-reveal:after,
+.metro .input-control.tel .btn-reveal:after,
 .metro .input-control.text .btn-date:after,
 .metro .input-control.password .btn-date:after,
 .metro .input-control.file .btn-date:after,
+.metro .input-control.email .btn-date:after,
+.metro .input-control.tel .btn-date:after,
 .metro .input-control.text .btn-file:after,
 .metro .input-control.password .btn-file:after,
 .metro .input-control.file .btn-file:after,
+.metro .input-control.email .btn-file:after,
+.metro .input-control.tel .btn-file:after,
 .metro .input-control.text .btn-search:after,
 .metro .input-control.password .btn-search:after,
-.metro .input-control.file .btn-search:after {
+.metro .input-control.file .btn-search:after,
+.metro .input-control.email .btn-search:after,
+.metro .input-control.tel .btn-search:after {
   font-family: iconFont;
   font-size: 10pt;
 }
 .metro .input-control.text .btn-clear:not(:disabled):active,
 .metro .input-control.password .btn-clear:not(:disabled):active,
 .metro .input-control.file .btn-clear:not(:disabled):active,
+.metro .input-control.email .btn-clear:not(:disabled):active,
+.metro .input-control.tel .btn-clear:not(:disabled):active,
 .metro .input-control.text .btn-reveal:not(:disabled):active,
 .metro .input-control.password .btn-reveal:not(:disabled):active,
 .metro .input-control.file .btn-reveal:not(:disabled):active,
+.metro .input-control.email .btn-reveal:not(:disabled):active,
+.metro .input-control.tel .btn-reveal:not(:disabled):active,
 .metro .input-control.text .btn-date:not(:disabled):active,
 .metro .input-control.password .btn-date:not(:disabled):active,
 .metro .input-control.file .btn-date:not(:disabled):active,
+.metro .input-control.email .btn-date:not(:disabled):active,
+.metro .input-control.tel .btn-date:not(:disabled):active,
 .metro .input-control.text .btn-file:not(:disabled):active,
 .metro .input-control.password .btn-file:not(:disabled):active,
 .metro .input-control.file .btn-file:not(:disabled):active,
+.metro .input-control.email .btn-file:not(:disabled):active,
+.metro .input-control.tel .btn-file:not(:disabled):active,
 .metro .input-control.text .btn-search:not(:disabled):active,
 .metro .input-control.password .btn-search:not(:disabled):active,
-.metro .input-control.file .btn-search:not(:disabled):active {
+.metro .input-control.file .btn-search:not(:disabled):active,
+.metro .input-control.email .btn-search:not(:disabled):active,
+.metro .input-control.tel .btn-search:not(:disabled):active {
   background-color: #1d1d1d;
   color: #ffffff;
 }
 .metro .input-control.text .btn-clear:active,
 .metro .input-control.password .btn-clear:active,
 .metro .input-control.file .btn-clear:active,
+.metro .input-control.email .btn-clear:active,
+.metro .input-control.tel .btn-clear:active,
 .metro .input-control.text .btn-reveal:active,
 .metro .input-control.password .btn-reveal:active,
 .metro .input-control.file .btn-reveal:active,
+.metro .input-control.email .btn-reveal:active,
+.metro .input-control.tel .btn-reveal:active,
 .metro .input-control.text .btn-date:active,
 .metro .input-control.password .btn-date:active,
 .metro .input-control.file .btn-date:active,
+.metro .input-control.email .btn-date:active,
+.metro .input-control.tel .btn-date:active,
 .metro .input-control.text .btn-file:active,
 .metro .input-control.password .btn-file:active,
 .metro .input-control.file .btn-file:active,
+.metro .input-control.email .btn-file:active,
+.metro .input-control.tel .btn-file:active,
 .metro .input-control.text .btn-search:active,
 .metro .input-control.password .btn-search:active,
-.metro .input-control.file .btn-search:active {
+.metro .input-control.file .btn-search:active,
+.metro .input-control.email .btn-search:active,
+.metro .input-control.tel .btn-search:active {
   left: auto;
 }
 .metro .input-control.text .btn-clear:focus,
 .metro .input-control.password .btn-clear:focus,
 .metro .input-control.file .btn-clear:focus,
+.metro .input-control.email .btn-clear:focus,
+.metro .input-control.tel .btn-clear:focus,
 .metro .input-control.text .btn-reveal:focus,
 .metro .input-control.password .btn-reveal:focus,
 .metro .input-control.file .btn-reveal:focus,
+.metro .input-control.email .btn-reveal:focus,
+.metro .input-control.tel .btn-reveal:focus,
 .metro .input-control.text .btn-date:focus,
 .metro .input-control.password .btn-date:focus,
 .metro .input-control.file .btn-date:focus,
+.metro .input-control.email .btn-date:focus,
+.metro .input-control.tel .btn-date:focus,
 .metro .input-control.text .btn-file:focus,
 .metro .input-control.password .btn-file:focus,
 .metro .input-control.file .btn-file:focus,
+.metro .input-control.email .btn-file:focus,
+.metro .input-control.tel .btn-file:focus,
 .metro .input-control.text .btn-search:focus,
 .metro .input-control.password .btn-search:focus,
-.metro .input-control.file .btn-search:focus {
+.metro .input-control.file .btn-search:focus,
+.metro .input-control.email .btn-search:focus,
+.metro .input-control.tel .btn-search:focus {
   outline: 1px #ccc dotted ;
 }
 .metro .input-control.text input:focus ~ .btn-clear,
 .metro .input-control.password input:focus ~ .btn-clear,
 .metro .input-control.file input:focus ~ .btn-clear,
+.metro .input-control.email input:focus ~ .btn-clear,
+.metro .input-control.tel input:focus ~ .btn-clear,
 .metro .input-control.text input:focus ~ .btn-reveal,
 .metro .input-control.password input:focus ~ .btn-reveal,
-.metro .input-control.file input:focus ~ .btn-reveal {
+.metro .input-control.file input:focus ~ .btn-reveal,
+.metro .input-control.email input:focus ~ .btn-reveal,
+.metro .input-control.tel input:focus ~ .btn-reveal {
   display: block;
 }
 .metro .input-control.text input:not(:focus) ~ .btn-clear:active,
 .metro .input-control.password input:not(:focus) ~ .btn-clear:active,
 .metro .input-control.file input:not(:focus) ~ .btn-clear:active,
+.metro .input-control.email input:not(:focus) ~ .btn-clear:active,
+.metro .input-control.tel input:not(:focus) ~ .btn-clear:active,
 .metro .input-control.text input:not(:focus) ~ .btn-reveal:active,
 .metro .input-control.password input:not(:focus) ~ .btn-reveal:active,
-.metro .input-control.file input:not(:focus) ~ .btn-reveal:active {
+.metro .input-control.file input:not(:focus) ~ .btn-reveal:active,
+.metro .input-control.email input:not(:focus) ~ .btn-reveal:active,
+.metro .input-control.tel input:not(:focus) ~ .btn-reveal:active {
   display: block;
 }
 .metro .input-control.text .btn-clear:after,
 .metro .input-control.password .btn-clear:after,
-.metro .input-control.file .btn-clear:after {
+.metro .input-control.file .btn-clear:after,
+.metro .input-control.email .btn-clear:after,
+.metro .input-control.tel .btn-clear:after {
   content: "\e089";
 }
 .metro .input-control.text .btn-reveal:after,
 .metro .input-control.password .btn-reveal:after,
-.metro .input-control.file .btn-reveal:after {
+.metro .input-control.file .btn-reveal:after,
+.metro .input-control.email .btn-reveal:after,
+.metro .input-control.tel .btn-reveal:after {
   content: "\e000";
 }
 .metro .input-control.text .btn-search:after,
 .metro .input-control.password .btn-search:after,
-.metro .input-control.file .btn-search:after {
+.metro .input-control.file .btn-search:after,
+.metro .input-control.email .btn-search:after,
+.metro .input-control.tel .btn-search:after {
   content: "\e041";
 }
 .metro .input-control.text .btn-date:after,
 .metro .input-control.password .btn-date:after,
-.metro .input-control.file .btn-date:after {
+.metro .input-control.file .btn-date:after,
+.metro .input-control.email .btn-date:after,
+.metro .input-control.tel .btn-date:after {
   content: "\e020";
 }
 .metro .input-control.text .btn-file:after,
 .metro .input-control.password .btn-file:after,
-.metro .input-control.file .btn-file:after {
+.metro .input-control.file .btn-file:after,
+.metro .input-control.email .btn-file:after,
+.metro .input-control.tel .btn-file:after {
   content: "\e012";
 }
 .metro .input-control.text .btn-search,
 .metro .input-control.password .btn-search,
-.metro .input-control.file .btn-search {
+.metro .input-control.file .btn-search,
+.metro .input-control.email .btn-search,
+.metro .input-control.tel .btn-search {
   display: block;
 }
 .metro .input-control.text .btn-date,
 .metro .input-control.password .btn-date,
-.metro .input-control.file .btn-date {
+.metro .input-control.file .btn-date,
+.metro .input-control.email .btn-date,
+.metro .input-control.tel .btn-date {
   display: block;
 }
 .metro .input-control.text .btn-file,
 .metro .input-control.password .btn-file,
-.metro .input-control.file .btn-file {
+.metro .input-control.file .btn-file,
+.metro .input-control.email .btn-file,
+.metro .input-control.tel .btn-file {
   display: block;
 }
 .metro .input-control.text [class*="btn-"],
 .metro .input-control.password [class*="btn-"],
-.metro .input-control.file [class*="btn-"] {
+.metro .input-control.file [class*="btn-"],
+.metro .input-control.email [class*="btn-"],
+.metro .input-control.tel [class*="btn-"] {
   background-color: transparent;
 }
 .metro .input-control.text input::-ms-reveal,
 .metro .input-control.password input::-ms-reveal,
 .metro .input-control.file input::-ms-reveal,
+.metro .input-control.email input::-ms-reveal,
+.metro .input-control.tel input::-ms-reveal,
 .metro .input-control.text input::-ms-clear,
 .metro .input-control.password input::-ms-clear,
-.metro .input-control.file input::-ms-clear {
+.metro .input-control.file input::-ms-clear,
+.metro .input-control.email input::-ms-clear,
+.metro .input-control.tel input::-ms-clear {
   display: none;
 }
 .metro .input-control.text input,
 .metro .input-control.password input,
-.metro .input-control.file input {
+.metro .input-control.file input,
+.metro .input-control.email input,
+.metro .input-control.tel input {
   border: 1px #d9d9d9 solid;
   width: 100%;
   height: 100%;
   padding: 5px;
   z-index: 1;
+  -webkit-appearance: none;
 }
 .metro .input-control.text input:focus,
 .metro .input-control.password input:focus,
-.metro .input-control.file input:focus {
+.metro .input-control.file input:focus,
+.metro .input-control.email input:focus,
+.metro .input-control.tel input:focus {
   outline: 0;
   border-color: #919191;
 }
 .metro .input-control.text input:disabled,
 .metro .input-control.password input:disabled,
-.metro .input-control.file input:disabled {
+.metro .input-control.file input:disabled,
+.metro .input-control.email input:disabled,
+.metro .input-control.tel input:disabled {
   padding-right: 5px;
 }
 .metro .input-control.text input:disabled ~ .btn-clear,
 .metro .input-control.password input:disabled ~ .btn-clear,
 .metro .input-control.file input:disabled ~ .btn-clear,
+.metro .input-control.email input:disabled ~ .btn-clear,
+.metro .input-control.tel input:disabled ~ .btn-clear,
 .metro .input-control.text input:disabled ~ .btn-reveal,
 .metro .input-control.password input:disabled ~ .btn-reveal,
-.metro .input-control.file input:disabled ~ .btn-reveal {
+.metro .input-control.file input:disabled ~ .btn-reveal,
+.metro .input-control.email input:disabled ~ .btn-reveal,
+.metro .input-control.tel input:disabled ~ .btn-reveal {
   display: none;
 }
 .metro .input-control.text input::-moz-placeholder,
 .metro .input-control.password input::-moz-placeholder,
-.metro .input-control.file input::-moz-placeholder {
+.metro .input-control.file input::-moz-placeholder,
+.metro .input-control.email input::-moz-placeholder,
+.metro .input-control.tel input::-moz-placeholder {
   color: #999999;
 }
 .metro .input-control.text input::-webkit-input-placeholder,
 .metro .input-control.password input::-webkit-input-placeholder,
-.metro .input-control.file input::-webkit-input-placeholder {
+.metro .input-control.file input::-webkit-input-placeholder,
+.metro .input-control.email input::-webkit-input-placeholder,
+.metro .input-control.tel input::-webkit-input-placeholder {
   color: #999999;
 }
 .metro .input-control.select,
@@ -2893,16 +3008,22 @@ a {
 .metro .input-control.select.warning-state input,
 .metro .input-control.textarea.warning-state input,
 .metro .input-control.file.warning-state input,
+.metro .input-control.email.warning-state input,
+.metro .input-control.tel.warning-state input,
 .metro .input-control.text.warning-state select,
 .metro .input-control.password.warning-state select,
 .metro .input-control.select.warning-state select,
 .metro .input-control.textarea.warning-state select,
 .metro .input-control.file.warning-state select,
+.metro .input-control.email.warning-state select,
+.metro .input-control.tel.warning-state select,
 .metro .input-control.text.warning-state textarea,
 .metro .input-control.password.warning-state textarea,
 .metro .input-control.select.warning-state textarea,
 .metro .input-control.textarea.warning-state textarea,
-.metro .input-control.file.warning-state textarea {
+.metro .input-control.file.warning-state textarea,
+.metro .input-control.email.warning-state textarea,
+.metro .input-control.tel.warning-state textarea {
   border-color: #fa6800;
 }
 .metro .input-control.text.error-state input,
@@ -2910,16 +3031,22 @@ a {
 .metro .input-control.select.error-state input,
 .metro .input-control.textarea.error-state input,
 .metro .input-control.file.error-state input,
+.metro .input-control.email.error-state input,
+.metro .input-control.tel.error-state input,
 .metro .input-control.text.error-state select,
 .metro .input-control.password.error-state select,
 .metro .input-control.select.error-state select,
 .metro .input-control.textarea.error-state select,
 .metro .input-control.file.error-state select,
+.metro .input-control.email.error-state select,
+.metro .input-control.tel.error-state select,
 .metro .input-control.text.error-state textarea,
 .metro .input-control.password.error-state textarea,
 .metro .input-control.select.error-state textarea,
 .metro .input-control.textarea.error-state textarea,
-.metro .input-control.file.error-state textarea {
+.metro .input-control.file.error-state textarea,
+.metro .input-control.email.error-state textarea,
+.metro .input-control.tel.error-state textarea {
   border-color: #e51400;
 }
 .metro .input-control.text.info-state input,
@@ -2927,16 +3054,22 @@ a {
 .metro .input-control.select.info-state input,
 .metro .input-control.textarea.info-state input,
 .metro .input-control.file.info-state input,
+.metro .input-control.email.info-state input,
+.metro .input-control.tel.info-state input,
 .metro .input-control.text.info-state select,
 .metro .input-control.password.info-state select,
 .metro .input-control.select.info-state select,
 .metro .input-control.textarea.info-state select,
 .metro .input-control.file.info-state select,
+.metro .input-control.email.info-state select,
+.metro .input-control.tel.info-state select,
 .metro .input-control.text.info-state textarea,
 .metro .input-control.password.info-state textarea,
 .metro .input-control.select.info-state textarea,
 .metro .input-control.textarea.info-state textarea,
-.metro .input-control.file.info-state textarea {
+.metro .input-control.file.info-state textarea,
+.metro .input-control.email.info-state textarea,
+.metro .input-control.tel.info-state textarea {
   border-color: #4390df;
 }
 .metro .input-control.text.success-state input,
@@ -2944,51 +3077,67 @@ a {
 .metro .input-control.select.success-state input,
 .metro .input-control.textarea.success-state input,
 .metro .input-control.file.success-state input,
+.metro .input-control.email.success-state input,
+.metro .input-control.tel.success-state input,
 .metro .input-control.text.success-state select,
 .metro .input-control.password.success-state select,
 .metro .input-control.select.success-state select,
 .metro .input-control.textarea.success-state select,
 .metro .input-control.file.success-state select,
+.metro .input-control.email.success-state select,
+.metro .input-control.tel.success-state select,
 .metro .input-control.text.success-state textarea,
 .metro .input-control.password.success-state textarea,
 .metro .input-control.select.success-state textarea,
 .metro .input-control.textarea.success-state textarea,
-.metro .input-control.file.success-state textarea {
+.metro .input-control.file.success-state textarea,
+.metro .input-control.email.success-state textarea,
+.metro .input-control.tel.success-state textarea {
   border-color: #60a917;
 }
 .metro .input-control.text input[data-state="warning"],
 .metro .input-control.password input[data-state="warning"],
 .metro .input-control.select input[data-state="warning"],
 .metro .input-control.textarea input[data-state="warning"],
-.metro .input-control.file input[data-state="warning"] {
+.metro .input-control.file input[data-state="warning"],
+.metro .input-control.email input[data-state="warning"],
+.metro .input-control.tel input[data-state="warning"] {
   border-color: #fa6800;
 }
 .metro .input-control.text input[data-state="error"],
 .metro .input-control.password input[data-state="error"],
 .metro .input-control.select input[data-state="error"],
 .metro .input-control.textarea input[data-state="error"],
-.metro .input-control.file input[data-state="error"] {
+.metro .input-control.file input[data-state="error"],
+.metro .input-control.email input[data-state="error"],
+.metro .input-control.tel input[data-state="error"] {
   border-color: #e51400;
 }
 .metro .input-control.text input[data-state="info"],
 .metro .input-control.password input[data-state="info"],
 .metro .input-control.select input[data-state="info"],
 .metro .input-control.textarea input[data-state="info"],
-.metro .input-control.file input[data-state="info"] {
+.metro .input-control.file input[data-state="info"],
+.metro .input-control.email input[data-state="info"],
+.metro .input-control.tel input[data-state="info"] {
   border-color: #4390df;
 }
 .metro .input-control.text input[data-state="success"],
 .metro .input-control.password input[data-state="success"],
 .metro .input-control.select input[data-state="success"],
 .metro .input-control.textarea input[data-state="success"],
-.metro .input-control.file input[data-state="success"] {
+.metro .input-control.file input[data-state="success"],
+.metro .input-control.email input[data-state="success"],
+.metro .input-control.tel input[data-state="success"] {
   border-color: #60a917;
 }
 .metro .input-control.text[class*="span"],
 .metro .input-control.password[class*="span"],
 .metro .input-control.select[class*="span"],
 .metro .input-control.textarea[class*="span"],
-.metro .input-control.file[class*="span"] {
+.metro .input-control.file[class*="span"],
+.metro .input-control.email[class*="span"],
+.metro .input-control.tel[class*="span"] {
   margin-left: 0;
 }
 .metro .input-control.file {
@@ -4027,9 +4176,14 @@ a {
   right: 0;
   left: auto;
 }
-.metro .navigation-bar .element-menu > li > .dropdown-menu .dropdown-menu,
-.metro .navbar .element-menu > li > .dropdown-menu .dropdown-menu {
-  border: 0 !important;
+.metro .navigation-bar .element-menu.drop-up li > .dropdown-menu,
+.metro .navbar .element-menu.drop-up li > .dropdown-menu {
+  top: auto;
+  bottom: 45px;
+}
+.metro .navigation-bar .element-menu.drop-up li > .dropdown-menu .dropdown-menu,
+.metro .navbar .element-menu.drop-up li > .dropdown-menu .dropdown-menu {
+  bottom: 0;
 }
 .metro .navigation-bar .pull-menu,
 .metro .navbar .pull-menu {
@@ -4076,7 +4230,7 @@ a {
 .metro .navigation-bar.fixed-bottom,
 .metro .navbar.fixed-bottom {
   position: fixed;
-  z-index: 10000;
+  z-index: 1030;
   left: 0;
 }
 .metro .navigation-bar.fixed-top,
@@ -4543,11 +4697,15 @@ a {
 }
 .metro .tile-group {
   margin-right: 46px;
-  width: 130px;
+  min-width: 130px;
+  width: auto;
   float: left;
   display: block;
   padding-top: 40px;
   position: relative;
+}
+.metro .tile-group.one {
+  width: 130px;
 }
 .metro .tile-group.two,
 .metro .tile-group.double {
@@ -4681,7 +4839,6 @@ a {
   line-height: 56px;
   height: 56px;
   width: 56px;
-  position: relative;
   font-size: 48px;
   color: #ffffff;
   text-align: center;
@@ -4832,18 +4989,17 @@ a {
 }
 .metro .tile.half .tile-content.icon [class*="icon-"],
 .metro .tile.half .tile-content.icon img {
-  line-height: 37.333333333333336px;
-  height: 37.333333333333336px;
-  width: 37.333333333333336px;
-  position: relative;
+  line-height: 37.33333333px;
+  height: 37.33333333px;
+  width: 37.33333333px;
   font-size: 32px;
   color: #ffffff;
   text-align: center;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-top: -18.666666666666668px;
-  margin-left: -18.666666666666668px;
+  margin-top: -18.66666667px;
+  margin-left: -18.66666667px;
 }
 .metro .tile {
   font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
@@ -4898,6 +5054,170 @@ a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.metro [class*=tile-transform-] {
+  -webkit-transition: all 0.22s;
+  transition: all 0.22s;
+}
+.metro .tile-transform-right {
+  -webkit-transform-origin: left 50%;
+  -moz-transform-origin: left 50%;
+  -ms-transform-origin: left 50%;
+  -o-transform-origin: left 50%;
+  transform-origin: left 50%;
+  -webkit-transform: perspective(500px) rotateY(0.138372rad);
+  -moz-transform: perspective(500px) rotateY(0.138372rad);
+  -ms-transform: perspective(500px) rotateY(0.138372rad);
+  -o-transform: perspective(500px) rotateY(0.138372rad);
+  transform: perspective(500px) rotateY(0.138372rad);
+}
+.metro .tile.double.tile-transform-right {
+  -webkit-transform: perspective(500px) rotateY(0.069186rad);
+  -moz-transform: perspective(500px) rotateY(0.069186rad);
+  -ms-transform: perspective(500px) rotateY(0.069186rad);
+  -o-transform: perspective(500px) rotateY(0.069186rad);
+  transform: perspective(500px) rotateY(0.069186rad);
+}
+.metro .tile.triple.tile-transform-right {
+  -webkit-transform: perspective(500px) rotateY(0.046124rad);
+  -moz-transform: perspective(500px) rotateY(0.046124rad);
+  -ms-transform: perspective(500px) rotateY(0.046124rad);
+  -o-transform: perspective(500px) rotateY(0.046124rad);
+  transform: perspective(500px) rotateY(0.046124rad);
+}
+.metro .tile.quadro.tile-transform-right {
+  -webkit-transform: perspective(500px) rotateY(0.034593rad);
+  -moz-transform: perspective(500px) rotateY(0.034593rad);
+  -ms-transform: perspective(500px) rotateY(0.034593rad);
+  -o-transform: perspective(500px) rotateY(0.034593rad);
+  transform: perspective(500px) rotateY(0.034593rad);
+}
+.metro .tile.half.tile-transform-right {
+  -webkit-transform: perspective(500px) rotateY(0.276744rad);
+  -moz-transform: perspective(500px) rotateY(0.276744rad);
+  -ms-transform: perspective(500px) rotateY(0.276744rad);
+  -o-transform: perspective(500px) rotateY(0.276744rad);
+  transform: perspective(500px) rotateY(0.276744rad);
+}
+.metro .tile-transform-left {
+  -webkit-transform-origin: right 50%;
+  -moz-transform-origin: right 50%;
+  -ms-transform-origin: right 50%;
+  -o-transform-origin: right 50%;
+  transform-origin: right 50%;
+  -webkit-transform: perspective(500px) rotateY(-0.138372rad);
+  -moz-transform: perspective(500px) rotateY(-0.138372rad);
+  -ms-transform: perspective(500px) rotateY(-0.138372rad);
+  -o-transform: perspective(500px) rotateY(-0.138372rad);
+  transform: perspective(500px) rotateY(-0.138372rad);
+}
+.metro .tile.double.tile-transform-left {
+  -webkit-transform: perspective(500px) rotateY(-0.069186rad);
+  -moz-transform: perspective(500px) rotateY(-0.069186rad);
+  -ms-transform: perspective(500px) rotateY(-0.069186rad);
+  -o-transform: perspective(500px) rotateY(-0.069186rad);
+  transform: perspective(500px) rotateY(-0.069186rad);
+}
+.metro .tile.triple.tile-transform-left {
+  -webkit-transform: perspective(500px) rotateY(-0.046124rad);
+  -moz-transform: perspective(500px) rotateY(-0.046124rad);
+  -ms-transform: perspective(500px) rotateY(-0.046124rad);
+  -o-transform: perspective(500px) rotateY(-0.046124rad);
+  transform: perspective(500px) rotateY(-0.046124rad);
+}
+.metro .tile.quadro.tile-transform-left {
+  -webkit-transform: perspective(500px) rotateY(-0.034593rad);
+  -moz-transform: perspective(500px) rotateY(-0.034593rad);
+  -ms-transform: perspective(500px) rotateY(-0.034593rad);
+  -o-transform: perspective(500px) rotateY(-0.034593rad);
+  transform: perspective(500px) rotateY(-0.034593rad);
+}
+.metro .tile.half.tile-transform-left {
+  -webkit-transform: perspective(500px) rotateY(-0.276744rad);
+  -moz-transform: perspective(500px) rotateY(-0.276744rad);
+  -ms-transform: perspective(500px) rotateY(-0.276744rad);
+  -o-transform: perspective(500px) rotateY(-0.276744rad);
+  transform: perspective(500px) rotateY(-0.276744rad);
+}
+.metro .tile-transform-top {
+  -webkit-transform-origin: 50% bottom;
+  -moz-transform-origin: 50% bottom;
+  -ms-transform-origin: 50% bottom;
+  -o-transform-origin: 50% bottom;
+  transform-origin: 50% bottom;
+  -webkit-transform: perspective(500px) rotateX(0.138372rad);
+  -moz-transform: perspective(500px) rotateX(0.138372rad);
+  -ms-transform: perspective(500px) rotateX(0.138372rad);
+  -o-transform: perspective(500px) rotateX(0.138372rad);
+  transform: perspective(500px) rotateX(0.138372rad);
+}
+.metro .tile.double.tile-transform-top {
+  -webkit-transform: perspective(500px) rotateX(0.069186rad);
+  -moz-transform: perspective(500px) rotateX(0.069186rad);
+  -ms-transform: perspective(500px) rotateX(0.069186rad);
+  -o-transform: perspective(500px) rotateX(0.069186rad);
+  transform: perspective(500px) rotateX(0.069186rad);
+}
+.metro .tile.triple.tile-transform-top {
+  -webkit-transform: perspective(500px) rotateX(0.046124rad);
+  -moz-transform: perspective(500px) rotateX(0.046124rad);
+  -ms-transform: perspective(500px) rotateX(0.046124rad);
+  -o-transform: perspective(500px) rotateX(0.046124rad);
+  transform: perspective(500px) rotateX(0.046124rad);
+}
+.metro .tile.quadro.tile-transform-top {
+  -webkit-transform: perspective(500px) rotateX(0.034593rad);
+  -moz-transform: perspective(500px) rotateX(0.034593rad);
+  -ms-transform: perspective(500px) rotateX(0.034593rad);
+  -o-transform: perspective(500px) rotateX(0.034593rad);
+  transform: perspective(500px) rotateX(0.034593rad);
+}
+.metro .tile.half.tile-transform-top {
+  -webkit-transform: perspective(500px) rotateX(0.276744rad);
+  -moz-transform: perspective(500px) rotateX(0.276744rad);
+  -ms-transform: perspective(500px) rotateX(0.276744rad);
+  -o-transform: perspective(500px) rotateX(0.276744rad);
+  transform: perspective(500px) rotateX(0.276744rad);
+}
+.metro .tile-transform-bottom {
+  -webkit-transform-origin: 50% top;
+  -moz-transform-origin: 50% top;
+  -ms-transform-origin: 50% top;
+  -o-transform-origin: 50% top;
+  transform-origin: 50% top;
+  -webkit-transform: perspective(500px) rotateX(-0.138372rad);
+  -moz-transform: perspective(500px) rotateX(-0.138372rad);
+  -ms-transform: perspective(500px) rotateX(-0.138372rad);
+  -o-transform: perspective(500px) rotateX(-0.138372rad);
+  transform: perspective(500px) rotateX(-0.138372rad);
+}
+.metro .tile.double.tile-transform-bottom {
+  -webkit-transform: perspective(500px) rotateX(-0.069186rad);
+  -moz-transform: perspective(500px) rotateX(-0.069186rad);
+  -ms-transform: perspective(500px) rotateX(-0.069186rad);
+  -o-transform: perspective(500px) rotateX(-0.069186rad);
+  transform: perspective(500px) rotateX(-0.069186rad);
+}
+.metro .tile.triple.tile-transform-bottom {
+  -webkit-transform: perspective(500px) rotateX(-0.046124rad);
+  -moz-transform: perspective(500px) rotateX(-0.046124rad);
+  -ms-transform: perspective(500px) rotateX(-0.046124rad);
+  -o-transform: perspective(500px) rotateX(-0.046124rad);
+  transform: perspective(500px) rotateX(-0.046124rad);
+}
+.metro .tile.quadro.tile-transform-bottom {
+  -webkit-transform: perspective(500px) rotateX(-0.034593rad);
+  -moz-transform: perspective(500px) rotateX(-0.034593rad);
+  -ms-transform: perspective(500px) rotateX(-0.034593rad);
+  -o-transform: perspective(500px) rotateX(-0.034593rad);
+  transform: perspective(500px) rotateX(-0.034593rad);
+}
+.metro .tile.half.tile-transform-bottom {
+  -webkit-transform: perspective(500px) rotateX(-0.276744rad);
+  -moz-transform: perspective(500px) rotateX(-0.276744rad);
+  -ms-transform: perspective(500px) rotateX(-0.276744rad);
+  -o-transform: perspective(500px) rotateX(-0.276744rad);
+  transform: perspective(500px) rotateX(-0.276744rad);
 }
 .metro .carousel {
   display: block;
@@ -6036,7 +6356,7 @@ a {
 .metro .slider.place-right {
   margin-left: 20px;
 }
-.metro .window-overlay {
+.metro.window-overlay {
   position: fixed;
   left: 0;
   top: 0;
@@ -6261,39 +6581,6 @@ a {
 }
 .metro .window.flat .content {
   padding-top: 38px;
-}
-.metro.notify-container {
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1060;
-}
-.metro.notify-container .notify {
-  background-color: #ffffff;
-  display: block;
-  position: relative;
-  min-width: 220px;
-  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
-  color: #1d1d1d;
-  padding: 10px;
-  margin: 2px 2px 2px 0;
-}
-.metro.notify-container .notify .caption {
-  font-size: 18px;
-  line-height: 20px;
-  margin-bottom: 5px;
-}
-.metro.notify-container .notify .content {
-  font-size: 14px;
-  line-height: 16px;
-}
-.metro .notify-wrapper {
-  position: relative;
-  background-color: #1d1d1d;
-  width: auto;
-  height: auto;
-  min-width: 250px;
-  color: #ffffff;
 }
 .metro .listview .list {
   border: 4px transparent solid;
@@ -6650,50 +6937,6 @@ a {
   margin-right: 10px;
   margin-top: 5px;
 }
-.metro .notice {
-  display: block;
-  min-width: 200px;
-  height: auto;
-  position: relative;
-  background-color: #4390df;
-  padding: 20px;
-}
-.metro .notice * {
-  color: inherit;
-}
-.metro .notice:before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  display: block;
-  position: absolute;
-  background-color: inherit;
-  left: -5px;
-  top: 50%;
-  margin-top: -5px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.metro .notice.marker-on-top:before {
-  top: 0;
-  left: 50%;
-  margin-left: -5px;
-}
-.metro .notice.marker-on-right:before {
-  top: 50%;
-  margin-top: -5px;
-  left: 100%;
-  margin-left: -5px;
-}
-.metro .notice.marker-on-bottom:before {
-  top: 100%;
-  margin-left: -5px;
-  left: 50%;
-  margin-top: -5px;
-}
 .metro .treeview {
   background-color: #fdfdfd;
   color: #555555;
@@ -7025,9 +7268,12 @@ a {
   background-color: #cde6f7;
   color: #444444;
 }
+.metro p [data-hint] {
+  border-bottom: 1px #373737 dotted;
+  white-space: nowrap;
+}
 .metro .hint {
-  position: absolute;
-  background-color: #fffcc0;
+  position: fixed;
   color: #1d1d1d;
   padding: 10px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -7035,9 +7281,10 @@ a {
   width: auto;
   max-width: 220px;
   margin-top: 10px;
-  border: 1px #eaeaea solid;
   z-index: 1030;
   display: none;
+  border: 1px solid;
+  border-color: #6a6a6a;
 }
 .metro .hint .hint-title,
 .metro .hint .hint-text {
@@ -7060,11 +7307,12 @@ a {
 }
 .metro .hint:after {
   z-index: 1;
+  border-color: inherit;
 }
 .metro .hint.bottom:before,
 .metro .hint.bottom:after {
   top: 1px;
-  left: 10px;
+  left: 5px;
   margin: -10px 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -7072,24 +7320,24 @@ a {
 }
 .metro .hint.bottom:after {
   top: 0;
-  border-bottom: 10px solid #eaeaea;
+  border-bottom: 10px solid;
 }
 .metro .hint.top:before,
 .metro .hint.top:after {
   top: 100%;
   margin-top: -1px;
-  left: 10px;
+  left: 5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 10px solid #fffcc0;
 }
 .metro .hint.top:after {
   margin-top: 1px;
-  border-top: 10px solid #eaeaea;
+  border-top: 10px solid;
 }
 .metro .hint.left:before,
 .metro .hint.left:after {
-  top: 10px;
+  top: 5px;
   left: 100%;
   margin-left: -1px;
   border-top: 5px solid transparent;
@@ -7098,11 +7346,11 @@ a {
 }
 .metro .hint.left:after {
   margin-left: 0;
-  border-left: 10px solid #eaeaea;
+  border-left: 10px solid;
 }
 .metro .hint.right:before,
 .metro .hint.right:after {
-  top: 10px;
+  top: 5px;
   left: -9px;
   margin: 0;
   border-top: 5px solid transparent;
@@ -7111,7 +7359,7 @@ a {
 }
 .metro .hint.right:after {
   left: -10px;
-  border-right: 10px solid #eaeaea;
+  border-right: 10px solid;
 }
 .metro .balloon {
   display: block;
@@ -7190,38 +7438,82 @@ a {
   border-right: 20px solid #555555;
 }
 .metro .stepper {
-  list-style: none;
+  margin: 10px 0;
+}
+.metro .stepper:before,
+.metro .stepper:after {
+  display: table;
+  content: "";
+}
+.metro .stepper:after {
+  clear: both;
+}
+.metro .stepper > ul {
+  counter-reset: li;
   border-top: 1px #1d1d1d dotted;
   position: relative;
   padding: 0;
-  margin: 60px 0;
+  margin: 30px 0;
+  width: 100%;
 }
-.metro .stepper li {
+.metro .stepper > ul li {
+  list-style: none;
   float: left;
-  width: 32px;
-  height: 32px;
-  border-radius: 100%;
-  margin-left: 20%;
-  margin-top: -16px;
-  background-color: #e51400;
-  border: 2px #9a1616 solid;
-  position: relative;
+  width: 2em;
+  height: 2em;
+  margin-top: -1em;
+  position: absolute;
+  left: 0;
+  background: #666;
+  cursor: pointer;
 }
-.metro .stepper li:first-child {
-  margin-left: 0;
+.metro .stepper > ul li:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  box-sizing: border-box;
+  padding: .3em 10px;
+  color: #fff;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
 }
-.metro .stepper li:last-child {
-  left: 10px;
+.metro .stepper > ul li:hover {
+  background-color: #999999;
 }
-.metro .stepper li:hover {
-  background-color: #ff2d19;
+.metro .stepper > ul li.current,
+.metro .stepper > ul li.complete {
+  transition: all 0.2s ease;
 }
-.metro .stepper li.complete {
+.metro .stepper > ul li.current {
+  background-color: #1ba1e2;
+}
+.metro .stepper > ul li.current:hover {
+  background-color: #00ccff;
+}
+.metro .stepper > ul li.complete {
   background-color: #60a917;
-  border: 2px #128023 solid;
 }
-.metro .stepper li.complete:hover {
+.metro .stepper > ul li.complete:hover {
   background-color: #7ad61d;
+}
+.metro .stepper.rounded li {
+  border-radius: 100%;
+}
+.metro .stepper.diamond li {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.metro .stepper.diamond li:before {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .metro .streamer {
   position: relative;
@@ -7585,6 +7877,441 @@ a {
   content: "\e1af";
   margin-top: -1px;
   margin-right: -1px;
+}
+.metro.notify-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1060;
+}
+.metro.notify-container .notify {
+  background-color: #ffffff;
+  display: block;
+  position: relative;
+  min-width: 220px;
+  font-family: 'Segoe UI_', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+  color: #1d1d1d;
+  padding: 10px;
+  margin: 2px 2px 2px 0;
+}
+.metro.notify-container .notify .caption {
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+.metro.notify-container .notify .content {
+  font-size: 14px;
+  line-height: 16px;
+}
+.metro .notify-wrapper {
+  position: relative;
+  background-color: #1d1d1d;
+  width: auto;
+  height: auto;
+  min-width: 250px;
+  color: #ffffff;
+}
+.metro .notice {
+  display: block;
+  min-width: 200px;
+  height: auto;
+  position: relative;
+  background-color: #4390df;
+  padding: 20px;
+}
+.metro .notice * {
+  color: inherit;
+}
+.metro .notice:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  background-color: inherit;
+  left: -5px;
+  top: 50%;
+  margin-top: -5px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.metro .notice.marker-on-top:before {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+}
+.metro .notice.marker-on-right:before {
+  top: 50%;
+  margin-top: -5px;
+  left: 100%;
+  margin-left: -5px;
+}
+.metro .notice.marker-on-bottom:before {
+  top: 100%;
+  margin-left: -5px;
+  left: 50%;
+  margin-top: -5px;
+}
+.metro .dataTable {
+  clear: both;
+}
+.metro .dataTable thead .sorting_asc,
+.metro .dataTable thead .sorting_desc,
+.metro .dataTable thead .sorting {
+  cursor: pointer;
+}
+.metro .dataTable thead .sorting_asc:after,
+.metro .dataTable thead .sorting_desc:after,
+.metro .dataTable thead .sorting:after {
+  font-family: iconFont;
+  position: relative;
+  float: right;
+  right: 0;
+  color: #999999;
+}
+.metro .dataTable thead .sorting:after {
+  content: "\e0a0";
+}
+.metro .dataTable thead .sorting_asc:after {
+  content: "\e1ae";
+}
+.metro .dataTable thead .sorting_desc:after {
+  content: "\e1ad";
+}
+.metro .dataTable thead .sorting_asc:after,
+.metro .dataTable thead .sorting_desc:after {
+  color: #1d1d1d;
+}
+.metro .dataTables_wrapper .dataTables_filter label,
+.metro .dataTables_wrapper .dataTables_length label {
+  vertical-align: middle;
+}
+.metro .dataTables_wrapper .dataTables_filter input,
+.metro .dataTables_wrapper .dataTables_length input,
+.metro .dataTables_wrapper .dataTables_filter select,
+.metro .dataTables_wrapper .dataTables_length select {
+  border: 1px #d9d9d9 solid;
+  width: auto;
+  height: 100%;
+  padding: 5px;
+  z-index: 1;
+  position: relative;
+}
+.metro .dataTables_wrapper .dataTables_filter input:focus,
+.metro .dataTables_wrapper .dataTables_length input:focus,
+.metro .dataTables_wrapper .dataTables_filter select:focus,
+.metro .dataTables_wrapper .dataTables_length select:focus {
+  outline: 0;
+  border-color: #919191;
+}
+.metro .dataTables_wrapper .dataTables_length {
+  float: left;
+}
+.metro .dataTables_wrapper .dataTables_length select {
+  margin: 0 5px;
+}
+.metro .dataTables_wrapper .dataTables_filter {
+  float: right;
+}
+.metro .dataTables_wrapper .dataTables_filter input {
+  margin-left: 5px;
+}
+.metro .dataTables_wrapper .dataTables_paginate {
+  float: right;
+  text-align: right;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 4px 12px;
+  text-align: center;
+  vertical-align: middle !important;
+  background-color: #d9d9d9;
+  border: 1px transparent solid;
+  color: #222222;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  color: inherit;
+  display: block;
+  float: left;
+  margin-right: 1px;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.default {
+  background-color: #008287;
+  color: #fff;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button:focus {
+  outline: 0;
+  border: 1px #353535 dotted;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button:disabled,
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+  background-color: #eaeaea !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button * {
+  color: inherit;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button *:hover {
+  color: inherit;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.primary {
+  background-color: #16499a !important;
+  color: #ffffff !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.info {
+  background-color: #4390df !important;
+  color: #ffffff !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.success {
+  background-color: #60a917 !important;
+  color: #ffffff !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.warning {
+  background-color: #fa6800 !important;
+  color: #ffffff !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.danger {
+  background-color: #9a1616 !important;
+  color: #ffffff !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.inverse {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.link {
+  background-color: transparent !important;
+  color: #2e92cf !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.link:hover {
+  text-decoration: underline;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.link:disabled,
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.link.disabled {
+  background-color: transparent !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.link [class*="icon-"] {
+  text-decoration: none !important;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button:active {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.large {
+  padding: 11px 19px;
+  font-size: 17.5px;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.small {
+  padding: 2px 10px;
+  font-size: 11.9px;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.mini {
+  padding: 0px 6px;
+  font-size: 10.5px;
+}
+.metro .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background-color: #4390df;
+  color: #ffffff;
+}
+.metro .dataTables_wrapper .dataTables_info {
+  float: left;
+}
+.metro .dataTables_wrapper .dataTables_scrollHeadInner table {
+  margin: 0 !important;
+}
+.metro .dataTables_wrapper .dataTables_processing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -2em;
+  width: 200px;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+.metro .dataTables_wrapper .dataTables_scroll {
+  clear: both;
+}
+.metro .dataTables_wrapper:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+.metro .wizard .steps {
+  margin: 10px 0;
+  padding: 20px;
+  border: 1px #eeeeee solid;
+  position: relative;
+}
+.metro .wizard .steps .step {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.metro .wizard .steps .step:first-child {
+  display: block;
+}
+.metro .wizard .actions .group-right {
+  float: right;
+}
+.metro .wizard .actions .group-left {
+  float: left;
+}
+.metro .wizard .actions button {
+  padding: 4px 12px;
+  text-align: center;
+  vertical-align: middle !important;
+  background-color: #d9d9d9;
+  border: 1px transparent solid;
+  color: #222222;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin-right: 2px;
+}
+.metro .wizard .actions button.default {
+  background-color: #008287;
+  color: #fff;
+}
+.metro .wizard .actions button:focus {
+  outline: 0;
+  border: 1px #353535 dotted;
+}
+.metro .wizard .actions button:disabled,
+.metro .wizard .actions button.disabled {
+  background-color: #eaeaea !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .wizard .actions button * {
+  color: inherit;
+}
+.metro .wizard .actions button *:hover {
+  color: inherit;
+}
+.metro .wizard .actions button.primary {
+  background-color: #16499a !important;
+  color: #ffffff !important;
+}
+.metro .wizard .actions button.info {
+  background-color: #4390df !important;
+  color: #ffffff !important;
+}
+.metro .wizard .actions button.success {
+  background-color: #60a917 !important;
+  color: #ffffff !important;
+}
+.metro .wizard .actions button.warning {
+  background-color: #fa6800 !important;
+  color: #ffffff !important;
+}
+.metro .wizard .actions button.danger {
+  background-color: #9a1616 !important;
+  color: #ffffff !important;
+}
+.metro .wizard .actions button.inverse {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+}
+.metro .wizard .actions button.link {
+  background-color: transparent !important;
+  color: #2e92cf !important;
+}
+.metro .wizard .actions button.link:hover {
+  text-decoration: underline;
+}
+.metro .wizard .actions button.link:disabled,
+.metro .wizard .actions button.link.disabled {
+  background-color: transparent !important;
+  color: #bebebe !important;
+  cursor: not-allowed !important;
+}
+.metro .wizard .actions button.link [class*="icon-"] {
+  text-decoration: none !important;
+}
+.metro .wizard .actions button:active {
+  background-color: #1d1d1d !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+.metro .wizard .actions button.large {
+  padding: 11px 19px;
+  font-size: 17.5px;
+}
+.metro .wizard .actions button.small {
+  padding: 2px 10px;
+  font-size: 11.9px;
+}
+.metro .wizard .actions button.mini {
+  padding: 0px 6px;
+  font-size: 10.5px;
+}
+.metro .wizard .actions button:last-child {
+  margin-right: 0;
+}
+.metro .wizard .actions button.btn-finish {
+  background-color: #60a917;
+  color: #ffffff;
+}
+.metro .wizard .actions button:disabled {
+  background-color: #6f6f6f !important;
+}
+.metro .panel {
+  border: 1px #eaeaea solid;
+}
+.metro .panel .panel-header {
+  padding: 10px;
+  background-color: #eeeeee;
+  width: 100%;
+  font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  color: #000000;
+  letter-spacing: 0.00em;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  color: #1d1d1d;
+  cursor: default;
+}
+.metro .panel .panel-content {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+.metro [data-role=panel] .panel-header {
+  cursor: pointer;
+}
+.metro [data-role=panel] .panel-header:after {
+  font-family: iconFont;
+  content: "\e1b1";
+  float: right;
+  color: inherit;
+}
+.metro [data-role=panel].collapsed .panel-header:after {
+  content: "\e1b3";
 }
 @font-face {
   font-family: 'iconFont';

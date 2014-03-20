@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../static/css/metro-bootstrap.css" rel="stylesheet">
+<link href="../static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+<script src="../static/js/jquery/jquery.min.js"></script>
+<title>Hello World from grunt-node-webkit-builder!</title>
+<script>
+    //var deck = require('deck');
+    //var xs = deck.shuffle([ 1, 2, 3, 4 ]);
+    //console.log(deck, xs);
+</script>
+<script src="../static/js/jquery.mustache.js"></script>
+</head>
+<body class="metro">
+<a href="../index.html">返回</a>
+<script>
+$( window ).load(function() {
+    var view = {
+        title: "Joe",
+        calc: function () {
+            return 2 + 4;
+        }
+    };
+
+    var output = Mustache.render("{{title}} spends {{calc}}", view);
+    $("#testmiddle").html(output);
+    console.log(output);
+});
+</script>
+<div id="testmiddle">
+</div>
+<div class="">
+    <form>
+        <fieldset>
+            <legend>Legend</legend>
+            <label>Label name</label>
+            <div class="input-control text" data-role="input-control">
+                <input type="text" placeholder="type text" id="testposttext">
+                <button class="btn-clear" tabindex="-1" type="button"></button>
+            </div>
+
+            <input type="button" value="Submit" id="testpost">
+            <input type="button" value="createPerson" id="createPerson">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

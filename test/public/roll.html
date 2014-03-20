@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="product" content="Metro UI CSS Framework">
+    <meta name="description" content="Simple responsive css framework">
+    <meta name="author" content="Sergey S. Pimenov, Ukraine, Kiev">
+
+    <link href="static/css/metro-bootstrap.css" rel="stylesheet">
+    <link href="static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+    <link href="static/css/docs.css" rel="stylesheet">
+    <link href="static/js/prettify/prettify.css" rel="stylesheet">
+
+    <!-- Load JavaScript Libraries -->
+    <script src="static/js/jquery/jquery.min.js"></script>
+    <script src="static/js/jquery/jquery.widget.min.js"></script>
+    <script src="static/js/jquery/jquery.mousewheel.js"></script>
+    <script src="static/js/prettify/prettify.js"></script>
+
+    <!-- Metro UI CSS JavaScript plugins -->
+    <script src="static/js/metro.min.js"></script>
+
+    <!-- Local JavaScript -->
+    <script src="static/js/docs.js"></script>
+    <script src="static/js/start-screen.js"></script>
+    <script src="static/js/director.min.js"></script>
+    <script src="static/js/jquery.mustache.js"></script>
+    <script src="scripts/init.js"></script>
+
+    <title>Metro UI CSS : Metro Bootstrap CSS Library</title>
+</head>
+<body class="metro">
+    <div class="container">
+                <h1>
+                    <a href="/"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+                    Scrollbar<small class="on-right">component</small>
+                </h1>
+
+                <p class="description">
+                    Metro UI CSS provides scrollbar component to create scroll area. This component required <code>metro-scroll.js</code>.
+                </p>
+
+                <div class="example">
+                    <div class="grid fluid">
+                        <div class="row">
+                            <div class="span4">
+                                <h4>Vertical scroll</h4>
+                                <div id="scrollbox1" data-role="scrollbox1" data-scroll="vertical">
+                    <nav class="sidebar light">
+                        <ul>
+                            <li class="title">Items Group 1</li>
+                            <li class="active"><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+                            <li class="stick bg-red"><a href="#"><i class="icon-cog"></i>Layouts</a></li>
+                            <li class="stick bg-yellow">
+                                <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Sub menu</a>
+                                <ul class="dropdown-menu" data-role="dropdown">
+                                    <li><a href="">Subitem 1</a></li>
+                                    <li><a href="">Subitem 2</a></li>
+                                    <li><a href="">Subitem 3</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="">Subitem 4</a></li>
+                                    <li class="disabled"><a href="">Subitem 4</a></li>
+                                </ul>
+                            </li>
+                            <li class="stick bg-green"><a href="#">Thread item</a></li>
+                            <li class="disabled"><a href="#">Disabled item</a></li>
+                     
+                        </ul>
+                    </nav>
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <h4>Horizontal scroll</h4>
+                                <div id="scrollbox2" data-role="scrollbox1" data-scroll="horizontal" style="width: 1000px">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </div>
+                            </div>
+                            <div class="span4">
+                                <h4>Both scrolls</h4>
+                                <div id="scrollbox3" data-role="scrollbox1" data-scroll="both" style="width: 500px">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    $(function(){
+                        $("#scrollbox1").scrollbar({
+                            height: 155,
+                            axis: 'y'
+                        });
+                        $("#scrollbox2").scrollbar({
+                            axis: 'x',
+                            height: 155
+                        });
+                        $("#scrollbox3").scrollbar({
+                            height: 155
+                        });
+                    });
+                </script>
+
+<pre class="prettyprint linenums">
+&lt;div data-role="scrollbox" data-scroll="vertical | horizontal | both"&gt;
+    ... text here ...
+&lt;/div&gt;
+</pre>
+
+    </div>
+</body>
+</html>

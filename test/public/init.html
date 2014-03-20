@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="product" content="Metro UI CSS Framework">
+    <meta name="description" content="Simple responsive css framework">
+    <meta name="author" content="Sergey S. Pimenov, Ukraine, Kiev">
+
+    <link href="static/css/metro-bootstrap.css" rel="stylesheet">
+    <link href="static/css/metro-bootstrap-responsive.css" rel="stylesheet">
+    <link href="static/css/docs.css" rel="stylesheet">
+    <link href="static/js/prettify/prettify.css" rel="stylesheet">
+
+    <!-- Load JavaScript Libraries -->
+    <script src="static/js/jquery/jquery.min.js"></script>
+    <script src="static/js/jquery/jquery.widget.min.js"></script>
+    <script src="static/js/jquery/jquery.mousewheel.js"></script>
+    <script src="static/js/prettify/prettify.js"></script>
+
+    <!-- Metro UI CSS JavaScript plugins -->
+    <script src="static/js/metro.min.js"></script>
+
+    <!-- Local JavaScript -->
+    <script src="static/js/docs.js"></script>
+    <script src="static/js/start-screen.js"></script>
+    <script src="static/js/director.min.js"></script>
+    <script src="static/js/jquery.mustache.js"></script>
+    <script src="scripts/init.js"></script>
+
+    <title>Metro UI CSS : Metro Bootstrap CSS Library</title>
+</head>
+<body class="metro">
+<div id="nav-bar-area">
+<nav class="navigation-bar">
+    <nav class="navigation-bar-content">
+        <div class="element">
+            <a class="dropdown-toggle" href="#"><span class="icon-grid-view"></span>思源教育<sup>beta0.1</sup></a>
+            <ul class="dropdown-menu" data-role="dropdown">
+                <li><a href="index.html">index</a></li>
+                <li class="divider"></li>
+                <li><a href="start.html">Exit</a></li>
+            </ul>
+        </div>
+ 
+        <span class="element-divider"></span>
+        <a class="element brand" href="#"><span class="icon-spin"></span></a>
+        <a class="element brand" href="#"><span class="icon-printer"></span></a>
+        <span class="element-divider"></span>
+ 
+        <div class="element input-element">
+            <form>
+                <div class="input-control text">
+                    <input type="text" placeholder="Search...">
+                    <button class="btn-search"></button>
+                </div>
+            </form>
+        </div>
+ 
+        <div class="element place-right">
+            <a class="dropdown-toggle" href="#">
+                <span class="icon-cog"></span>
+            </a>
+            <ul class="dropdown-menu place-right" data-role="dropdown">
+                <li><a href="#/author">Author</a></li>
+                <li><a href="#/books">books</a></li>
+                <li><a href="#/books/view/1">books_view_1</a></li>
+            </ul>
+        </div>
+        <span class="element-divider place-right"></span>
+        <a class="element place-right" href="#"><span class="icon-locked-2"></span></a>
+        <span class="element-divider place-right"></span>
+        <button class="element image-button image-left place-right">
+            Sergey Pimenov
+            <img src="static/images/2.jpg"/>
+        </button>
+    </nav>
+</nav>
+</div>
+
+<div class="container">
+    <h1>
+        <a href="/"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+        Accordion<small class="on-right">component</small>
+    </h1>
+    <div class="grid fluid">
+        <div id="main-work-area" class="row">
+                <div class="span4">
+                    <div id="scrollbox1" data-role="scrollbox1" data-scroll="vertical">
+                        <nav class="sidebar light">
+                            <ul>
+                                <li class="title">Items Group 1</li>
+                                <li class="active"><a href="#"><i class="icon-home"></i>Dashboard</a></li>
+                                <li class="stick bg-red"><a href="#"><i class="icon-cog"></i>Layouts</a></li>
+                                <li class="stick bg-yellow">
+                                    <a class="dropdown-toggle" href="#"><i class="icon-tree-view"></i>Sub menu</a>
+                                    <ul class="dropdown-menu" data-role="dropdown">
+                                        <li><a href="">Subitem 1</a></li>
+                                        <li><a href="">Subitem 2</a></li>
+                                        <li><a href="">Subitem 3</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="">Subitem 4</a></li>
+                                        <li class="disabled"><a href="">Subitem 4</a></li>
+                                    </ul>
+                                </li>
+                                <li class="stick bg-green"><a href="#">Thread item</a></li>
+                                <li class="disabled"><a href="#">Disabled item</a></li>
+                         
+                            </ul>
+                        </nav>
+asdasdfasdf
+                    </div>
+                </div>
+                <div id="left_area" class="span3">
+                </div>
+
+                    <script>
+                    var fs = require('fs');
+                    var file = fs.readFileSync("view/message/create.html", "utf8");
+                    $( window ).load(function() {
+                        var view = {
+                            title: "Joe",
+                        };
+
+                        var output = Mustache.render(file, view);
+                        $("#main_area").html(output);
+                    });
+                    </script>
+                <div class="span8"  id="main_area">
+                </div>
+        </div>
+    </div>
+</div>
+                <script>
+                    $(function(){
+                        $("#scrollbox1").scrollbar({
+                            height: 255,
+                            axis: 'y'
+                        });
+                    });
+                </script>
+</body>
+</html>
