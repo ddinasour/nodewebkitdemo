@@ -1,8 +1,9 @@
-var Ca = require('./a');
-
-Ca.aaa();
-Ca.bbb();
+var a = 111;
+//var Ca = require('./a');
 //
+//Ca.aaa();
+//Ca.bbb();
+////
 //console.log(Va.a);
 
 //var Vb = require('./b');
@@ -18,7 +19,7 @@ function echoV(a)
 }
 
 var Vb = require('./c');
-Vb.ccc(echoV);
-Vb.ccc(echoV);
-Vb.ccc(echoV);
+Vb.ccc(a,echoV);
+Vb.ccc(a,echoV);
+Vb.ccc(a,echoV);
 
